@@ -13,8 +13,8 @@ Container will run in background, IIQ will be run from mounted volume.
 
 Includes:
 
- - Oracle JDK 1.8.101
- - Tomcat 8.5.9
+ - Oracle JDK 1.8.201
+ - Tomcat 8.5.38
  - Git, wget, curl, build-essential
  - mariadb database
  
