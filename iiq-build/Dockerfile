@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER Steffen Sperling <steffen.sperling@ventum.com>
 
-ENV TOMCAT_VERSION 8.5.29
+ENV TOMCAT_VERSION 8.5.38
 ENV IIQ_VERSION 7.2
 
 # Fix sh
@@ -27,8 +27,9 @@ rm -rf /var/cache/oracle-jdk8-installer
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # Get Tomcat
-RUN wget --quiet --no-cookies http://www-eu.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/tomcat.tgz && \
-tar xzvf /tmp/tomcat.tgz -C /opt && \
+COPY src/apache-tomcat-${TOMCAT_VERSION}.tar.gz /tmp/tomcat.tgz
+#RUN wget --quiet --no-cookies http://www-eu.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/tomcat.tgz
+RUN tar xzvf /tmp/tomcat.tgz -C /opt && \
 mv /opt/apache-tomcat-${TOMCAT_VERSION} /opt/tomcat && \
 rm /tmp/tomcat.tgz && \
 rm -rf /opt/tomcat/webapps/examples && \
