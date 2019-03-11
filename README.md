@@ -16,24 +16,18 @@ Container will run in background, IIQ will be run from mounted volume.
 Includes:
 
  - Oracle JDK 1.8.1xx (pulling latest version automatically)
- - Tomcat 8.5.29 (maybe you need to change this to current version)
+ - Tomcat 8.5.38
  - Git, wget, curl, build-essential
  - mariadb database
  
 ## Docker
 Get started with docker for Windows here: https://docs.docker.com/engine/installation/windows/
-## Volumes
-Exports a volume on `/opt/tomcat/webapps` (if you use this, you need to expand your identityiq.war manually to that directory.
-You can mount the volume on startup to a local directory containing your war file or exploded war directory.
 
 ## Ports
 Two ports are exposed:
 
  - 8080: default Tomcat port.
  - 8009: default Tomcat debug port.
-
-Remember to map the ports to the docker host with "docker run" or in docker-compose.yml.
-
 
 # How to run the container
 ## Using docker compose
@@ -46,7 +40,7 @@ Please do not upload this docker container to a public docker registry: Sailpoin
 If you have `docker-compose` installed, you can just launch:
 
 ```
-sudo docker-compose up
+docker-compose up
 ```
 
 # Usage
